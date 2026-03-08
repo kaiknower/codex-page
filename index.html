@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codex 能做什么</title>
+    <meta
+      name="description"
+      content="一个介绍 Codex 能力、工作方式与典型使用场景的响应式展示网站。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero" id="top">
+        <nav class="topbar">
+          <div class="brand">
+            <span class="brand-mark">C</span>
+            <span class="brand-text">Codex</span>
+          </div>
+          <div class="nav-links">
+            <a href="#capabilities">能力</a>
+            <a href="#workflow">流程</a>
+            <a href="#scenarios">场景</a>
+          </div>
+        </nav>
+
+        <section class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">AI Coding Agent</p>
+            <h1>把想法、代码库和终端，接到同一个工作台上。</h1>
+            <p class="hero-text">
+              Codex
+              不只是生成代码。它能读懂项目结构、执行命令、修改文件、解释实现逻辑，并在复杂任务里持续推进直到交付结果。
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#capabilities">查看核心能力</a>
+              <a class="button secondary" href="#workflow">了解工作方式</a>
+            </div>
+          </div>
+
+          <div class="hero-panel">
+            <div class="signal-card">
+              <span class="signal-label">实时协作面板</span>
+              <ul class="signal-list">
+                <li>读取仓库结构与上下文</li>
+                <li>执行命令并验证结果</li>
+                <li>直接编辑文件与补丁</li>
+                <li>持续反馈进度与风险</li>
+              </ul>
+            </div>
+            <div class="floating-badge badge-one">Code</div>
+            <div class="floating-badge badge-two">Shell</div>
+            <div class="floating-badge badge-three">Review</div>
+          </div>
+        </section>
+      </header>
+
+      <main>
+        <section class="stats-strip">
+          <article>
+            <strong>从需求到代码</strong>
+            <span>把自然语言转成可执行修改</span>
+          </article>
+          <article>
+            <strong>从仓库到结论</strong>
+            <span>先理解上下文，再动手实现</span>
+          </article>
+          <article>
+            <strong>从命令到验证</strong>
+            <span>运行检查，确认结果不是“看起来能用”</span>
+          </article>
+        </section>
+
+        <section class="section" id="capabilities">
+          <div class="section-heading">
+            <p class="eyebrow">Core Capabilities</p>
+            <h2>Codex 的核心能力</h2>
+          </div>
+          <div class="card-grid">
+            <article class="feature-card">
+              <span class="feature-index">01</span>
+              <h3>理解现有项目</h3>
+              <p>会先查看目录、代码和配置，而不是跳过上下文直接输出答案。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-index">02</span>
+              <h3>编写与修改代码</h3>
+              <p>能创建页面、重构逻辑、补测试、修 bug，并尽量保持既有代码风格。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-index">03</span>
+              <h3>执行终端命令</h3>
+              <p>可以查看文件、运行构建或测试命令，用真实输出来验证结果。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-index">04</span>
+              <h3>代码审查与定位风险</h3>
+              <p>在 review 模式下优先找行为回归、隐藏 bug、缺失测试和实现风险。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-index">05</span>
+              <h3>解释复杂实现</h3>
+              <p>能把函数、模块、数据流和架构选择讲清楚，适合 onboarding 或排障。</p>
+            </article>
+            <article class="feature-card">
+              <span class="feature-index">06</span>
+              <h3>持续推进任务</h3>
+              <p>面对多步骤任务，会先探索、再实现、最后验证，而不是停在分析阶段。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section workflow" id="workflow">
+          <div class="section-heading">
+            <p class="eyebrow">Workflow</p>
+            <h2>它通常是这样工作的</h2>
+          </div>
+          <div class="timeline">
+            <article class="timeline-item active" data-step="1">
+              <span>1</span>
+              <div>
+                <h3>先理解任务</h3>
+                <p>确认目标、约束和现有代码结构，避免无效改动。</p>
+              </div>
+            </article>
+            <article class="timeline-item" data-step="2">
+              <span>2</span>
+              <div>
+                <h3>再动手修改</h3>
+                <p>直接写代码、补文件、调整样式或实现逻辑。</p>
+              </div>
+            </article>
+            <article class="timeline-item" data-step="3">
+              <span>3</span>
+              <div>
+                <h3>最后验证结果</h3>
+                <p>运行命令、检查输出，并把改动与限制说明清楚。</p>
+              </div>
+            </article>
+          </div>
+          <div class="workflow-panel" aria-live="polite">
+            <div class="workflow-screen">
+              <p class="screen-label">当前步骤</p>
+              <h3 id="step-title">先理解任务</h3>
+              <p id="step-text">
+                通过目录、配置和关键文件快速建立上下文，再决定最合适的实现路径。
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section scenarios" id="scenarios">
+          <div class="section-heading">
+            <p class="eyebrow">Use Cases</p>
+            <h2>适合用 Codex 的场景</h2>
+          </div>
+          <div class="scenario-grid">
+            <article class="scenario-card accent-red">
+              <h3>快速搭原型</h3>
+              <p>一句需求，生成能看的页面和基础交互，适合落地 demo 或活动页。</p>
+            </article>
+            <article class="scenario-card accent-blue">
+              <h3>接手旧项目</h3>
+              <p>让它先读项目，再帮你解释模块职责、入口文件和关键数据流。</p>
+            </article>
+            <article class="scenario-card accent-gold">
+              <h3>修复线上问题</h3>
+              <p>先定位再修复，同时补上必要的保护逻辑和验证步骤。</p>
+            </article>
+            <article class="scenario-card accent-green">
+              <h3>提升开发效率</h3>
+              <p>把重复样板、脚本整理、测试补全和文档生成交给它处理。</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section closing">
+          <div class="closing-card">
+            <p class="eyebrow">One Agent, Many Jobs</p>
+            <h2>它像一个能读代码、会跑命令、还能持续反馈进度的开发搭档。</h2>
+            <p>
+              如果你要做的是真实项目里的真实工作，Codex 的价值不在一句回答，而在完整推进任务的能力。
+            </p>
+            <a class="button primary" href="#top" id="back-to-top">回到顶部</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
