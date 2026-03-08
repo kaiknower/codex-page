@@ -17,6 +17,40 @@ const timelineItems = document.querySelectorAll(".timeline-item");
 const stepTitle = document.querySelector("#step-title");
 const stepText = document.querySelector("#step-text");
 const backToTop = document.querySelector("#back-to-top");
+const videos = document.querySelectorAll("video");
+const videoStatus = document.querySelector("#video-status");
+const previewFallback = document.querySelector(".preview-fallback");
+
+function setVideoReadyState(isReady) {
+  if (videoStatus) {
+    videoStatus.innerHTML = isReady
+      ? '已检测到视频文件，页面会自动播放 <code>media/coverr-anime.mp4</code>。'
+      : '将 Coverr 下载的视频放到 <code>media/coverr-anime.mp4</code> 后，这里会自动播放。';
+  }
+
+  if (previewFallback) {
+    previewFallback.style.display = isReady ? "none" : "grid";
+  }
+}
+
+let loadedVideoCount = 0;
+
+videos.forEach((video) => {
+  video.addEventListener("loadeddata", () => {
+    loadedVideoCount += 1;
+    if (loadedVideoCount > 0) {
+      setVideoReadyState(true);
+    }
+  });
+
+  video.addEventListener("error", () => {
+    if (loadedVideoCount === 0) {
+      setVideoReadyState(false);
+    }
+  });
+});
+
+setVideoReadyState(false);
 
 timelineItems.forEach((item) => {
   item.addEventListener("click", () => {
