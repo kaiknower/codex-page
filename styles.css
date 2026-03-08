@@ -49,7 +49,7 @@ code {
 .hero {
   position: relative;
   overflow: hidden;
-  min-height: 96vh;
+  min-height: min(92vh, 980px);
   padding: 24px;
   border: 1px solid var(--line);
   border-radius: 34px;
@@ -62,11 +62,19 @@ code {
   inset: 0;
 }
 
+.hero-media {
+  overflow: hidden;
+  border-radius: inherit;
+}
+
 .hero-video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   filter: saturate(1.05) contrast(1.05) brightness(0.56);
+  transform: scale(1.02);
 }
 
 .hero-overlay {
@@ -305,14 +313,18 @@ main {
   position: relative;
   overflow: hidden;
   min-height: 380px;
+  max-height: 520px;
+  aspect-ratio: 16 / 9;
   border-radius: 22px;
   background: linear-gradient(135deg, rgba(255, 126, 203, 0.12), rgba(125, 231, 255, 0.12));
 }
 
 .preview-video {
+  display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
 }
 
 .preview-fallback {
@@ -415,6 +427,10 @@ main {
   .hero {
     min-height: auto;
   }
+
+  .hero-panel {
+    min-height: 300px;
+  }
 }
 
 @media (max-width: 720px) {
@@ -452,6 +468,7 @@ main {
   }
 
   .preview-frame {
-    min-height: 280px;
+    min-height: 220px;
+    max-height: 320px;
   }
 }
