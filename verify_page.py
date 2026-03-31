@@ -34,6 +34,9 @@ required_fragments = [
     "coverr-anime.mp4",
     "coverr-sci-fi-portal.mp4",
     "coverr-cosmic-sky.mp4",
+    "coverr-raygun-youth.mp4",
+    "coverr-blue-dragon.mp4",
+    "coverr-child-fish.mp4",
 ]
 
 forbidden_fragments = [
