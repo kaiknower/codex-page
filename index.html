@@ -30,6 +30,13 @@
           >
             <source src="./media/coverr-anime.mp4" type="video/mp4" />
           </video>
+          <div class="hero-grid"></div>
+          <div class="scanlines"></div>
+          <div class="light-trails">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
           <div class="hero-overlay"></div>
         </div>
 
@@ -48,15 +55,23 @@
 
         <section class="hero-content">
           <div class="hero-copy">
-            <p class="eyebrow">Anime Editorial Special</p>
-            <h1>Claude Code 泄露事件</h1>
-            <p class="hero-lead">
-              这更像一次发布链路与信任边界的公开提醒，而不是一张适合被夸张传播的“爆料海报”。
-            </p>
+            <p class="eyebrow">赛博夜景片头</p>
+            <div class="hero-title-stack">
+              <p class="hero-kicker">03 / 31 INCIDENT SIGNAL</p>
+              <h1>Claude Code 泄露事件</h1>
+              <p class="hero-lead">
+                一次更像动画片头开场的工程事故说明书：城市灯光很亮，但真正刺眼的是发布链路异常。
+              </p>
+            </div>
             <p class="hero-text">
               2026 年 3 月 31 日，围绕 Claude Code 发布包中附带 source map、进而让 CLI
               源码可被还原的讨论迅速扩散。这个页面不追求制造情绪，只解释一件事：为什么这次事件会让开发者社区如此敏感。
             </p>
+            <div class="hero-tags">
+              <span>Source Map</span>
+              <span>CLI Recoverability</span>
+              <span>Trust Boundary</span>
+            </div>
             <div class="hero-actions">
               <a class="button primary" href="#overview">开始阅读</a>
               <a class="button secondary" href="#impact">看后续影响</a>
@@ -66,13 +81,34 @@
             </p>
           </div>
 
-          <aside class="hero-summary">
-            <p class="summary-label">核心判断</p>
-            <ul class="summary-list">
-              <li>焦点不是“看到了一些代码”，而是发布产物为什么会暴露不该公开的调试上下文。</li>
-              <li>当 AI 开发工具开始接管终端、仓库与工作流时，它的发布纪律会直接影响信任。</li>
-              <li>社区之所以反应剧烈，是因为这件事触碰到了工具透明度、访问边界与安全预期。</li>
-            </ul>
+          <aside class="signal-board">
+            <div class="signal-board-header">
+              <span class="summary-label">Signal Board</span>
+              <span class="signal-board-state">LIVE</span>
+            </div>
+            <div class="signal-panel">
+              <p class="signal-panel-label">Primary Reading</p>
+              <p class="signal-panel-text">
+                这次事件真正令人不安的，不是围观到少量内部设计，而是高权限 agent
+                的发布边界显得没有想象中那么严密。
+              </p>
+            </div>
+            <div class="signal-panel compact">
+              <div>
+                <p class="signal-panel-label">Trigger</p>
+                <strong>公开包携带调试上下文</strong>
+              </div>
+              <div>
+                <p class="signal-panel-label">Focus</p>
+                <strong>发布流程与信任纪律</strong>
+              </div>
+            </div>
+            <div class="signal-ticker" aria-label="incident ticker">
+              <span>build artifact</span>
+              <span>visibility drift</span>
+              <span>tooling trust</span>
+              <span>deploy boundary</span>
+            </div>
           </aside>
         </section>
       </header>

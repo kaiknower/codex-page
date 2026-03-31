@@ -10,6 +10,8 @@ required_phrases = [
     "发生了什么",
     "为什么这件事重要",
     "外界反应与后续影响",
+    "赛博夜景片头",
+    "发布链路异常",
 ]
 
 forbidden_phrases = [
@@ -21,11 +23,24 @@ forbidden_phrases = [
 missing = [phrase for phrase in required_phrases if phrase not in html]
 present_forbidden = [phrase for phrase in forbidden_phrases if phrase in html]
 
-if missing or present_forbidden:
+required_fragments = [
+    'class="hero-grid"',
+    'class="scanlines"',
+    'class="signal-board"',
+    'class="signal-ticker"',
+]
+
+missing_fragments = [fragment for fragment in required_fragments if fragment not in html]
+
+if missing or present_forbidden or missing_fragments:
     if missing:
         print("Missing phrases:")
         for phrase in missing:
             print(f"  - {phrase}")
+    if missing_fragments:
+        print("Missing fragments:")
+        for fragment in missing_fragments:
+            print(f"  - {fragment}")
     if present_forbidden:
         print("Forbidden phrases still present:")
         for phrase in present_forbidden:
