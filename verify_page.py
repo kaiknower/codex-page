@@ -32,6 +32,8 @@ required_fragments = [
     'class="hero-video-stack"',
     'class="video-wall"',
     "coverr-anime.mp4",
+    "coverr-sci-fi-portal.mp4",
+    "coverr-cosmic-sky.mp4",
 ]
 
 forbidden_fragments = [
