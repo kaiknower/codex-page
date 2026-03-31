@@ -13,8 +13,8 @@ function setVideoReadyState(isReady) {
   document.body.classList.toggle("video-fallback", !isReady);
 
   videoStatus.innerHTML = isReady
-    ? '已加载背景视频 <code>media/coverr-anime.mp4</code>，首屏现在会以赛博片头方式呈现。'
-    : '背景视频未成功加载，页面会继续以静态专题页形式呈现。';
+    ? "已加载多支本地视频素材，首屏和视频信号墙现在会显示不同镜头。"
+    : "视频素材未成功加载，页面会继续以静态专题页形式呈现。";
 }
 
 videos.forEach((video) => {

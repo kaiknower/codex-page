@@ -31,6 +31,9 @@ required_fragments = [
     'class="signal-ticker"',
     'class="hero-video-stack"',
     'class="video-wall"',
+    "mixkit-shanghai-night.mp4",
+    "mixkit-aerial-night.mp4",
+    "mixkit-city-road-night.mp4",
 ]
 
 missing_fragments = [fragment for fragment in required_fragments if fragment not in html]
