@@ -1,7 +1,8 @@
 const backToTop = document.querySelector("#back-to-top");
-const heroVideo = document.querySelector(".hero-video");
+const videos = document.querySelectorAll("video");
 const videoStatus = document.querySelector("#video-status");
 const hero = document.querySelector(".hero");
+let loadedVideoCount = 0;
 
 function setVideoReadyState(isReady) {
   if (!videoStatus) {
@@ -16,12 +17,19 @@ function setVideoReadyState(isReady) {
     : '背景视频未成功加载，页面会继续以静态专题页形式呈现。';
 }
 
-heroVideo?.addEventListener("loadeddata", () => {
-  setVideoReadyState(true);
-});
+videos.forEach((video) => {
+  video.addEventListener("loadeddata", () => {
+    loadedVideoCount += 1;
+    if (loadedVideoCount > 0) {
+      setVideoReadyState(true);
+    }
+  });
 
-heroVideo?.addEventListener("error", () => {
-  setVideoReadyState(false);
+  video.addEventListener("error", () => {
+    if (loadedVideoCount === 0) {
+      setVideoReadyState(false);
+    }
+  });
 });
 
 setVideoReadyState(false);

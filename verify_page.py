@@ -12,6 +12,7 @@ required_phrases = [
     "外界反应与后续影响",
     "赛博夜景片头",
     "发布链路异常",
+    "视频信号墙",
 ]
 
 forbidden_phrases = [
@@ -28,6 +29,8 @@ required_fragments = [
     'class="scanlines"',
     'class="signal-board"',
     'class="signal-ticker"',
+    'class="hero-video-stack"',
+    'class="video-wall"',
 ]
 
 missing_fragments = [fragment for fragment in required_fragments if fragment not in html]

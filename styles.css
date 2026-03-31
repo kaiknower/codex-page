@@ -249,7 +249,8 @@ main {
 .timeline-item,
 .insight-card,
 .impact-card,
-.closing-note {
+.closing-note,
+.wall-video-card {
   border: 1px solid var(--line);
   background: var(--panel);
   backdrop-filter: blur(14px);
@@ -419,6 +420,68 @@ main {
   pointer-events: none;
 }
 
+.hero-video-stack {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.mini-video-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.mini-video-frame {
+  position: relative;
+  overflow: hidden;
+  min-height: 138px;
+  border-radius: 18px;
+  border: 1px solid rgba(140, 230, 255, 0.14);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.mini-video-frame.main {
+  min-height: 176px;
+}
+
+.mini-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.18) contrast(1.06) brightness(0.62);
+  transform: scale(1.06);
+}
+
+.mini-video.offset-a {
+  object-position: 18% center;
+}
+
+.mini-video.offset-b {
+  object-position: 78% center;
+}
+
+.mini-video-label {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 1;
+  display: inline-flex;
+  min-height: 28px;
+  align-items: center;
+  padding: 0 10px;
+  border-radius: 999px;
+  background: rgba(4, 8, 18, 0.76);
+  border: 1px solid rgba(140, 230, 255, 0.12);
+  font-family: "Barlow", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #dfe9ff;
+}
+
 .signal-board-header {
   position: relative;
   display: flex;
@@ -503,6 +566,68 @@ main {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
+}
+
+.video-wall {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 16px;
+}
+
+.wall-video-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 280px;
+  border-radius: 28px;
+  padding: 0;
+}
+
+.wall-video-card.wide {
+  min-height: 320px;
+}
+
+.wall-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: saturate(1.12) contrast(1.06) brightness(0.5);
+  transform: scale(1.05);
+}
+
+.wall-video.hero-cut {
+  object-position: center center;
+}
+
+.wall-video.cut-a {
+  object-position: 22% center;
+}
+
+.wall-video.cut-b {
+  object-position: 78% center;
+}
+
+.wall-video-copy {
+  position: absolute;
+  inset: auto 18px 18px 18px;
+  display: grid;
+  gap: 6px;
+  padding: 16px;
+  border-radius: 20px;
+  background: linear-gradient(180deg, rgba(7, 12, 24, 0.1), rgba(7, 12, 24, 0.78));
+  border: 1px solid rgba(140, 230, 255, 0.12);
+}
+
+.wall-video-copy span {
+  font-family: "Barlow", sans-serif;
+  font-size: 0.76rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(140, 230, 255, 0.82);
+}
+
+.wall-video-copy strong {
+  font-size: 1.08rem;
 }
 
 .intro-strip article,
@@ -650,7 +775,8 @@ main {
   .story-grid,
   .insight-grid,
   .impact-layout,
-  .intro-strip {
+  .intro-strip,
+  .video-wall {
     grid-template-columns: 1fr;
   }
 
@@ -668,6 +794,11 @@ main {
 
   .signal-panel.compact {
     grid-template-columns: 1fr;
+  }
+
+  .wall-video-card,
+  .wall-video-card.wide {
+    min-height: 240px;
   }
 }
 
@@ -699,8 +830,19 @@ main {
   .timeline-item,
   .insight-card,
   .impact-card,
-  .closing-note {
+  .closing-note,
+  .wall-video-card {
     border-radius: 22px;
+  }
+
+  .hero-copy,
+  .signal-board,
+  .intro-strip article,
+  .story-card,
+  .timeline-item,
+  .insight-card,
+  .impact-card,
+  .closing-note {
     padding: 20px;
   }
 
@@ -723,5 +865,21 @@ main {
 
   .signal-ticker {
     font-size: 0.74rem;
+  }
+
+  .mini-video-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .mini-video-frame,
+  .mini-video-frame.main,
+  .wall-video-card,
+  .wall-video-card.wide {
+    min-height: 200px;
+  }
+
+  .wall-video-copy {
+    inset: auto 12px 12px 12px;
+    padding: 14px;
   }
 }
