@@ -463,6 +463,10 @@ main {
   object-position: 78% center;
 }
 
+.mini-video.offset-c {
+  object-position: center center;
+}
+
 .mini-video-label {
   position: absolute;
   left: 12px;
@@ -584,6 +588,7 @@ main {
 
 .wall-video-card.wide {
   min-height: 320px;
+  grid-column: span 2;
 }
 
 .wall-video {
@@ -605,6 +610,14 @@ main {
 
 .wall-video.cut-b {
   object-position: 78% center;
+}
+
+.wall-video.cut-c {
+  object-position: center 32%;
+}
+
+.wall-video.cut-d {
+  object-position: center center;
 }
 
 .wall-video-copy {
@@ -799,6 +812,7 @@ main {
   .wall-video-card,
   .wall-video-card.wide {
     min-height: 240px;
+    grid-column: auto;
   }
 }
 
