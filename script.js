@@ -13,7 +13,7 @@ function setVideoReadyState(isReady) {
   document.body.classList.toggle("video-fallback", !isReady);
 
   videoStatus.innerHTML = isReady
-    ? "已加载多支本地视频素材，首屏和视频信号墙现在会显示不同镜头。"
+    ? "已加载二次元素材视频，首屏和视频信号墙现在会统一展示动漫感动态画面。"
     : "视频素材未成功加载，页面会继续以静态专题页形式呈现。";
 }
 

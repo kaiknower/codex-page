@@ -31,6 +31,10 @@ required_fragments = [
     'class="signal-ticker"',
     'class="hero-video-stack"',
     'class="video-wall"',
+    "coverr-anime.mp4",
+]
+
+forbidden_fragments = [
     "mixkit-shanghai-night.mp4",
     "mixkit-aerial-night.mp4",
     "mixkit-city-road-night.mp4",
@@ -39,8 +43,11 @@ required_fragments = [
 ]
 
 missing_fragments = [fragment for fragment in required_fragments if fragment not in html]
+present_forbidden_fragments = [
+    fragment for fragment in forbidden_fragments if fragment in html
+]
 
-if missing or present_forbidden or missing_fragments:
+if missing or present_forbidden or missing_fragments or present_forbidden_fragments:
     if missing:
         print("Missing phrases:")
         for phrase in missing:
@@ -48,6 +55,10 @@ if missing or present_forbidden or missing_fragments:
     if missing_fragments:
         print("Missing fragments:")
         for fragment in missing_fragments:
+            print(f"  - {fragment}")
+    if present_forbidden_fragments:
+        print("Forbidden fragments still present:")
+        for fragment in present_forbidden_fragments:
             print(f"  - {fragment}")
     if present_forbidden:
         print("Forbidden phrases still present:")
