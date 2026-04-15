@@ -1052,6 +1052,10 @@ main {
     max-width: 12ch;
   }
 
+  .section-heading {
+    margin-bottom: 20px;
+  }
+
   .signal-panel.compact {
     grid-template-columns: 1fr;
   }
@@ -1088,8 +1092,14 @@ main {
   }
 
   .nav-links {
+    width: 100%;
     gap: 12px 14px;
     justify-content: flex-start;
+  }
+
+  .nav-links a {
+    width: calc(50% - 7px);
+    justify-content: center;
   }
 
   .hero-copy,
@@ -1126,14 +1136,36 @@ main {
 
   .hero h1 {
     font-size: clamp(2.9rem, 14vw, 4.5rem);
+    line-height: 0.92;
   }
 
   .hero-lead {
     max-width: none;
+    font-size: 1.2rem;
+  }
+
+  .hero-text,
+  .helper-text,
+  .intro-strip p,
+  .story-card p,
+  .timeline-item p,
+  .insight-card p,
+  .impact-card li,
+  .closing-note p {
+    font-size: 0.98rem;
+    line-height: 1.75;
   }
 
   .hero-tags {
     gap: 8px;
+  }
+
+  .hero-actions {
+    gap: 10px;
+  }
+
+  .button {
+    width: 100%;
   }
 
   .signal-ticker {
@@ -1151,6 +1183,15 @@ main {
     min-height: 200px;
   }
 
+  .timeline-item {
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .timeline::before {
+    left: 23px;
+  }
+
   .wall-video-copy {
     inset: auto 12px 12px 12px;
     padding: 14px;
@@ -1159,5 +1200,45 @@ main {
   .wall-video-index {
     top: 12px;
     left: 12px;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero-copy,
+  .signal-board,
+  .intro-strip article,
+  .story-card,
+  .timeline-item,
+  .insight-card,
+  .impact-card,
+  .closing-note {
+    padding: 18px;
+  }
+
+  .nav-links a {
+    width: 100%;
+  }
+
+  .hero-meta-row span,
+  .hero-tags span,
+  .wall-video-index,
+  .mini-video-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.5rem, 15vw, 4rem);
+  }
+
+  .section h2 {
+    font-size: clamp(1.8rem, 10vw, 2.4rem);
+  }
+
+  .mini-video-frame,
+  .mini-video-frame.main,
+  .wall-video-card,
+  .wall-video-card.wide {
+    min-height: 180px;
   }
 }
