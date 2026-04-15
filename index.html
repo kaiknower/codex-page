@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claude Code 泄露事件解读</title>
+    <meta
+      name="description"
+      content="一个保留二次元氛围、但节奏更克制的 Claude Code 泄露事件解读页。"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700&family=Noto+Sans+SC:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero" id="top">
+        <div class="hero-media">
+          <video
+            class="hero-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="metadata"
+          >
+            <source src="./media/coverr-sci-fi-portal.mp4" type="video/mp4" />
+          </video>
+          <div class="hero-grid"></div>
+          <div class="scanlines"></div>
+          <div class="light-trails">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="hero-overlay"></div>
+        </div>
+
+        <nav class="topbar">
+          <a class="brand" href="#top">
+            <span class="brand-mark">CC</span>
+            <span class="brand-text">Incident Brief</span>
+          </a>
+          <div class="nav-links">
+            <a href="#overview">事件概览</a>
+            <a href="#what-happened">发生了什么</a>
+            <a href="#why-it-matters">为什么重要</a>
+            <a href="#impact">后续影响</a>
+          </div>
+        </nav>
+
+        <section class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">赛博夜景片头</p>
+            <div class="hero-title-stack">
+              <p class="hero-kicker">03 / 31 INCIDENT SIGNAL</p>
+              <h1>Claude Code 泄露事件</h1>
+              <p class="hero-lead">
+                一次更像动画片头开场的工程事故说明书：城市灯光很亮，但真正刺眼的是发布链路异常。
+              </p>
+            </div>
+            <p class="hero-text">
+              2026 年 3 月 31 日，围绕 Claude Code 发布包中附带 source map、进而让 CLI
+              源码可被还原的讨论迅速扩散。这个页面不追求制造情绪，只解释一件事：为什么这次事件会让开发者社区如此敏感。
+            </p>
+            <div class="hero-tags">
+              <span>Source Map</span>
+              <span>CLI Recoverability</span>
+              <span>Trust Boundary</span>
+            </div>
+            <div class="hero-actions">
+              <a class="button primary" href="#overview">开始阅读</a>
+              <a class="button secondary" href="#impact">看后续影响</a>
+            </div>
+            <p class="helper-text" id="video-status">
+              页面会优先加载二次元素材视频，首屏和视频墙会统一保持动漫感动态氛围。
+            </p>
+          </div>
+
+          <aside class="signal-board">
+            <div class="signal-board-header">
+              <span class="summary-label">Signal Board</span>
+              <span class="signal-board-state">LIVE</span>
+            </div>
+            <div class="hero-video-stack" aria-label="multi-video previews">
+              <div class="mini-video-frame main">
+                <video class="mini-video" autoplay muted loop playsinline preload="metadata">
+                  <source src="./media/coverr-raygun-youth.mp4" type="video/mp4" />
+                </video>
+                <span class="mini-video-label">main feed</span>
+              </div>
+              <div class="mini-video-grid">
+                <div class="mini-video-frame">
+                  <video class="mini-video offset-a" autoplay muted loop playsinline preload="metadata">
+                    <source src="./media/coverr-cosmic-sky.mp4" type="video/mp4" />
+                  </video>
+                  <span class="mini-video-label">cosmic sky</span>
+                </div>
+                <div class="mini-video-frame">
+                  <video class="mini-video offset-b" autoplay muted loop playsinline preload="metadata">
+                    <source src="./media/coverr-sci-fi-portal.mp4" type="video/mp4" />
+                  </video>
+                  <span class="mini-video-label">portal city</span>
+                </div>
+                <div class="mini-video-frame">
+                  <video class="mini-video offset-c" autoplay muted loop playsinline preload="metadata">
+                    <source src="./media/coverr-blue-dragon.mp4" type="video/mp4" />
+                  </video>
+                  <span class="mini-video-label">blue dragon</span>
+                </div>
+                <div class="mini-video-frame">
+                  <video class="mini-video offset-d" autoplay muted loop playsinline preload="metadata">
+                    <source src="./media/coverr-child-fish.mp4" type="video/mp4" />
+                  </video>
+                  <span class="mini-video-label">child fish</span>
+                </div>
+              </div>
+            </div>
+            <div class="signal-panel">
+              <p class="signal-panel-label">Primary Reading</p>
+              <p class="signal-panel-text">
+                这次事件真正令人不安的，不是围观到少量内部设计，而是高权限 agent
+                的发布边界显得没有想象中那么严密。
+              </p>
+            </div>
+            <div class="signal-panel compact">
+              <div>
+                <p class="signal-panel-label">Trigger</p>
+                <strong>公开包携带调试上下文</strong>
+              </div>
+              <div>
+                <p class="signal-panel-label">Focus</p>
+                <strong>发布流程与信任纪律</strong>
+              </div>
+            </div>
+            <div class="signal-ticker" aria-label="incident ticker">
+              <span>build artifact</span>
+              <span>visibility drift</span>
+              <span>tooling trust</span>
+              <span>deploy boundary</span>
+            </div>
+          </aside>
+        </section>
+      </header>
+
+      <main>
+        <section class="section intro-strip" id="overview">
+          <article>
+            <span class="kicker">事件概览</span>
+            <strong>源头</strong>
+            <p>公开讨论聚焦于 npm 发布包中携带的 source map，以及由此带来的源码可还原问题。</p>
+          </article>
+          <article>
+            <span class="kicker">为什么引爆</span>
+            <strong>信任问题</strong>
+            <p>Claude Code 不是普通前端组件，而是高权限开发工具。发布细节会被放大审视。</p>
+          </article>
+          <article>
+            <span class="kicker">读法</span>
+            <strong>先看结构</strong>
+            <p>比起围观泄露内容本身，更值得理解的是这类事件暴露出的工程与治理问题。</p>
+          </article>
+        </section>
+
+        <section class="section video-wall-section">
+          <div class="section-heading">
+            <p class="eyebrow">Video Signal Wall</p>
+            <h2>视频信号墙</h2>
+          </div>
+          <div class="video-wall">
+            <article class="wall-video-card wide">
+              <video class="wall-video hero-cut" autoplay muted loop playsinline preload="metadata">
+                <source src="./media/coverr-sci-fi-portal.mp4" type="video/mp4" />
+              </video>
+              <div class="wall-video-copy">
+                <span>portal cut</span>
+                <strong>用更明确的科幻门景做主片头</strong>
+              </div>
+            </article>
+            <article class="wall-video-card">
+              <video class="wall-video cut-a" autoplay muted loop playsinline preload="metadata">
+                <source src="./media/coverr-raygun-youth.mp4" type="video/mp4" />
+              </video>
+              <div class="wall-video-copy">
+                <span>raygun youth</span>
+                <strong>补进更明显的人物型 anime 镜头</strong>
+              </div>
+            </article>
+            <article class="wall-video-card">
+              <video class="wall-video cut-b" autoplay muted loop playsinline preload="metadata">
+                <source src="./media/coverr-anime.mp4" type="video/mp4" />
+              </video>
+              <div class="wall-video-copy">
+                <span>classic anime</span>
+                <strong>保留最初那支二次元主素材作为基底镜头</strong>
+              </div>
+            </article>
+            <article class="wall-video-card">
+              <video class="wall-video cut-c" autoplay muted loop playsinline preload="metadata">
+                <source src="./media/coverr-blue-dragon.mp4" type="video/mp4" />
+              </video>
+              <div class="wall-video-copy">
+                <span>blue dragon</span>
+                <strong>让片头里多一格奇幻生物镜头</strong>
+              </div>
+            </article>
+            <article class="wall-video-card">
+              <video class="wall-video cut-d" autoplay muted loop playsinline preload="metadata">
+                <source src="./media/coverr-child-fish.mp4" type="video/mp4" />
+              </video>
+              <div class="wall-video-copy">
+                <span>child fish</span>
+                <strong>补一格更柔和的童话感 anime 镜头</strong>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section article-section" id="what-happened">
+          <div class="section-heading">
+            <p class="eyebrow">What Happened</p>
+            <h2>发生了什么</h2>
+          </div>
+
+          <div class="story-grid">
+            <article class="story-card emphasis">
+              <p>
+                这次风波并不是传统意义上的“数据库被拖库”，而是一个更接近工程失误的公共事件：
+                发布到外部的 CLI 包被发现携带了足以帮助外界还原内部实现细节的 source map。
+              </p>
+              <p>
+                一旦可还原的上下文被拿到，社区自然会开始挖掘 prompt、策略、工具封装方式以及产品设计选择。
+                所以这场讨论真正升级的瞬间，并不是文件被看到，而是外界意识到“这套工具的内部边界，原来可以这样被看见”。
+              </p>
+            </article>
+
+            <div class="timeline">
+              <article class="timeline-item">
+                <span class="timeline-index">01</span>
+                <div>
+                  <h3>发布产物被检查</h3>
+                  <p>开发者先注意到公开包里带有调试辅助文件，而这类文件通常能暴露比运行时更多的上下文。</p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <span class="timeline-index">02</span>
+                <div>
+                  <h3>源码与策略被还原讨论</h3>
+                  <p>社区讨论迅速从“有没有泄露”转到“具体能还原多少内部实现”以及“是否包含敏感 prompt”。</p>
+                </div>
+              </article>
+              <article class="timeline-item">
+                <span class="timeline-index">03</span>
+                <div>
+                  <h3>事件被视为工程治理问题</h3>
+                  <p>最终争议不只是内容本身，而是一个高权限开发工具为何会在发布链路上留下这种缺口。</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="section article-section" id="why-it-matters">
+          <div class="section-heading">
+            <p class="eyebrow">Why It Matters</p>
+            <h2>为什么这件事重要</h2>
+          </div>
+
+          <div class="insight-grid">
+            <article class="insight-card">
+              <span class="insight-number">01</span>
+              <h3>AI 工具已经不是“普通软件”</h3>
+              <p>
+                Claude Code 这种产品能读项目、写文件、跑命令。用户给它的信任，本质上接近把一个自动化工程师放进自己的工作区。
+              </p>
+            </article>
+            <article class="insight-card">
+              <span class="insight-number">02</span>
+              <h3>发布卫生会被直接当成安全能力的一部分</h3>
+              <p>
+                对这种级别的工具来说，构建产物里带不该带的内容，不只是“流程疏忽”，而是会被理解成边界管理不够严格。
+              </p>
+            </article>
+            <article class="insight-card">
+              <span class="insight-number">03</span>
+              <h3>社区在借这次事件追问透明度</h3>
+              <p>
+                大家真正想知道的是：这类 agent 到底被设计成什么样、谁能审计它、当内部实现暴露时产品方会怎么回应。
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section article-section" id="impact">
+          <div class="section-heading">
+            <p class="eyebrow">Reaction And Impact</p>
+            <h2>外界反应与后续影响</h2>
+          </div>
+
+          <div class="impact-layout">
+            <article class="impact-card">
+              <h3>外界已经在看什么</h3>
+              <ul>
+                <li>这是否只是 source map 暴露，还是反映了更深的发布流程缺陷。</li>
+                <li>还原出的实现细节里，有没有涉及不该出现在公开包中的 prompt 或策略约束。</li>
+                <li>厂商后续会如何修补公开叙事与内部实现之间的落差。</li>
+              </ul>
+            </article>
+            <article class="impact-card">
+              <h3>接下来会被继续追问什么</h3>
+              <ul>
+                <li>未来版本会不会重新梳理打包策略、调试文件与发布审计流程。</li>
+                <li>高权限 agent 的透明度到底应该高到什么程度，哪些部分属于合理公开，哪些属于安全边界。</li>
+                <li>当行业里更多同类工具出现时，大家是否会把“发布可信度”当成新的比较维度。</li>
+              </ul>
+            </article>
+          </div>
+
+          <div class="closing-note">
+            <p class="closing-kicker">结论</p>
+            <p>
+              这次 Claude Code 泄露事件真正留下来的，不是几段被围观的内部实现，而是一句更重要的话：
+              当 AI 开发工具开始深入工作流，工程细节本身就会变成产品信誉的一部分。
+            </p>
+            <a class="button primary" href="#top" id="back-to-top">回到顶部</a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
