@@ -727,11 +727,33 @@ main {
   min-height: 280px;
   border-radius: 28px;
   padding: 0;
+  background: rgba(6, 10, 21, 0.72);
 }
 
 .wall-video-card.wide {
   min-height: 320px;
   grid-column: span 2;
+}
+
+.wall-video-card::before {
+  content: "";
+  position: absolute;
+  inset: 10px;
+  border-radius: 22px;
+  border: 1px solid rgba(140, 230, 255, 0.16);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.wall-video-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 18px 18px auto;
+  width: 92px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(140, 230, 255, 0.72));
+  pointer-events: none;
+  z-index: 1;
 }
 
 .wall-video {
@@ -763,6 +785,25 @@ main {
   object-position: center center;
 }
 
+.wall-video-index {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  z-index: 2;
+  display: inline-flex;
+  min-height: 30px;
+  align-items: center;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(140, 230, 255, 0.2);
+  background: rgba(4, 8, 18, 0.74);
+  color: #ebf4ff;
+  font-family: "Barlow", sans-serif;
+  font-size: 0.74rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
 .wall-video-copy {
   position: absolute;
   inset: auto 18px 18px 18px;
@@ -772,6 +813,7 @@ main {
   border-radius: 20px;
   background: linear-gradient(180deg, rgba(7, 12, 24, 0.1), rgba(7, 12, 24, 0.78));
   border: 1px solid rgba(140, 230, 255, 0.12);
+  z-index: 2;
 }
 
 .wall-video-copy span {
@@ -1112,5 +1154,10 @@ main {
   .wall-video-copy {
     inset: auto 12px 12px 12px;
     padding: 14px;
+  }
+
+  .wall-video-index {
+    top: 12px;
+    left: 12px;
   }
 }
