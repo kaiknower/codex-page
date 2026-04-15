@@ -324,6 +324,15 @@ main {
   pointer-events: none;
 }
 
+.hero-copy,
+.signal-board {
+  animation: floatPanel 8s ease-in-out infinite;
+}
+
+.signal-board {
+  animation-delay: -2.4s;
+}
+
 .eyebrow,
 .summary-label,
 .kicker,
@@ -596,6 +605,7 @@ main {
   object-fit: cover;
   filter: saturate(1.18) contrast(1.06) brightness(0.62);
   transform: scale(1.06);
+  transition: transform 500ms ease, filter 500ms ease;
 }
 
 .mini-video.offset-a {
@@ -763,6 +773,7 @@ main {
   object-fit: cover;
   filter: saturate(1.12) contrast(1.06) brightness(0.5);
   transform: scale(1.05);
+  transition: transform 500ms ease, filter 500ms ease;
 }
 
 .wall-video.hero-cut {
@@ -783,6 +794,12 @@ main {
 
 .wall-video.cut-d {
   object-position: center center;
+}
+
+.wall-video-card:hover .wall-video,
+.mini-video-frame:hover .mini-video {
+  transform: scale(1.09);
+  filter: saturate(1.18) contrast(1.08) brightness(0.62);
 }
 
 .wall-video-index {
@@ -1006,6 +1023,30 @@ main {
   max-width: 66ch;
 }
 
+body.video-ready .hero::before {
+  opacity: 0.92;
+}
+
+body.video-ready .hero-video,
+body.video-ready .wall-video,
+body.video-ready .mini-video {
+  filter: saturate(1.18) contrast(1.08) brightness(0.56);
+}
+
+body.video-fallback .hero-copy,
+body.video-fallback .signal-board,
+body.video-fallback .wall-video-card {
+  background:
+    linear-gradient(180deg, rgba(9, 15, 30, 0.9), rgba(7, 12, 24, 0.96)),
+    radial-gradient(circle at top right, rgba(130, 160, 255, 0.1), transparent 28%);
+}
+
+body.video-fallback .hero-video,
+body.video-fallback .wall-video,
+body.video-fallback .mini-video {
+  filter: grayscale(0.16) saturate(0.88) brightness(0.34);
+}
+
 @keyframes trailShift {
   0% {
     transform: translateX(-10%) scaleX(0.8);
@@ -1027,6 +1068,16 @@ main {
   }
   100% {
     transform: translateX(-110%);
+  }
+}
+
+@keyframes floatPanel {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
   }
 }
 
