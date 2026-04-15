@@ -793,6 +793,32 @@ main {
 .impact-card {
   border-radius: 26px;
   padding: 24px;
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+}
+
+.intro-strip article,
+.story-card,
+.timeline-item,
+.insight-card,
+.impact-card,
+.closing-note {
+  position: relative;
+  isolation: isolate;
+}
+
+.intro-strip article::before,
+.story-card::before,
+.timeline-item::before,
+.insight-card::before,
+.impact-card::before,
+.closing-note::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: linear-gradient(90deg, rgba(140, 230, 255, 0.62), transparent 48%, rgba(255, 145, 207, 0.38));
+  opacity: 0.88;
+  pointer-events: none;
 }
 
 .kicker {
@@ -828,8 +854,20 @@ main {
 }
 
 .timeline {
+  position: relative;
   display: grid;
   gap: 14px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 27px;
+  top: 18px;
+  bottom: 18px;
+  width: 1px;
+  background: linear-gradient(180deg, rgba(140, 230, 255, 0.46), rgba(140, 230, 255, 0.04));
+  pointer-events: none;
 }
 
 .timeline-item {
@@ -837,6 +875,9 @@ main {
   grid-template-columns: 56px minmax(0, 1fr);
   gap: 16px;
   align-items: start;
+  background:
+    linear-gradient(180deg, rgba(10, 16, 30, 0.84), rgba(9, 14, 28, 0.92)),
+    linear-gradient(135deg, rgba(130, 160, 255, 0.08), transparent 40%);
 }
 
 .timeline-item h3,
@@ -863,6 +904,9 @@ main {
   color: var(--cyan);
   font-family: "Barlow", sans-serif;
   font-weight: 700;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 22px rgba(130, 160, 255, 0.12);
 }
 
 .insight-grid {
@@ -873,12 +917,30 @@ main {
 
 .insight-card {
   min-height: 260px;
+  background:
+    linear-gradient(180deg, rgba(10, 16, 30, 0.82), rgba(8, 14, 28, 0.94)),
+    radial-gradient(circle at top right, rgba(140, 230, 255, 0.12), transparent 26%);
+}
+
+.insight-card:hover,
+.impact-card:hover,
+.intro-strip article:hover {
+  transform: translateY(-4px);
+  border-color: rgba(140, 230, 255, 0.22);
+  box-shadow: 0 22px 48px rgba(0, 0, 0, 0.26);
 }
 
 .impact-layout {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+}
+
+.impact-card {
+  transition: transform 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  background:
+    linear-gradient(180deg, rgba(10, 16, 30, 0.8), rgba(8, 14, 28, 0.92)),
+    radial-gradient(circle at top left, rgba(255, 145, 207, 0.08), transparent 28%);
 }
 
 .impact-card ul {
