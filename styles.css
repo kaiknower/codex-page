@@ -490,6 +490,7 @@ main {
 .hero-text {
   max-width: 60ch;
   margin-top: 20px;
+  text-wrap: pretty;
 }
 
 .hero-tags {
@@ -841,6 +842,10 @@ main {
   margin-top: 34px;
 }
 
+.section + .section {
+  margin-top: 42px;
+}
+
 .intro-strip {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1129,6 +1134,7 @@ main {
 .timeline-item p,
 .insight-card p {
   margin: 0;
+  text-wrap: pretty;
 }
 
 .timeline-index,
@@ -1193,6 +1199,7 @@ main {
 .impact-card li {
   position: relative;
   padding-left: 18px;
+  max-width: 58ch;
 }
 
 .impact-card li::before {
@@ -1224,6 +1231,11 @@ main {
 .closing-note p {
   margin: 0;
   max-width: 66ch;
+}
+
+.story-card p,
+.closing-note p {
+  max-width: 62ch;
 }
 
 body.video-ready .hero::before {
@@ -1420,6 +1432,10 @@ body.video-fallback .mini-video {
   .closing-note p {
     font-size: 0.98rem;
     line-height: 1.75;
+  }
+
+  .section + .section {
+    margin-top: 34px;
   }
 
   .hero-tags {
